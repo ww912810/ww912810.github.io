@@ -1,12 +1,72 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Banli Studio — digital services & tools</title>
-<style>body{font-family:system-ui,sans-serif;max-width:680px;margin:40px auto;padding:0 20px;line-height:1.6;color:#222}</style></head>
+<title>Banli Studio — digital services & self-hosted tools</title>
+<meta name="description" content="Banli Studio: AI-assisted digital services — content writing, data cleanup, automation — and ready-to-use self-hosted tools. Fast delivery, crypto direct.">
+<style>
+:root{--ink:#0d1117;--ink2:#131a23;--card:#161e29;--line:#26303d;--txt:#e8edf2;--mut:#9fb0c0;--acc:#e8a33d;--acc2:#f5c168}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--ink);color:var(--txt);line-height:1.65}
+a{color:var(--acc2)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;background:rgba(13,17,23,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+nav .wrap{display:flex;align-items:center;gap:26px;height:60px}
+.logo{font-weight:800;font-size:18px;color:var(--txt);text-decoration:none}
+.logo span{color:var(--acc)}
+nav .links{margin-left:auto;display:flex;gap:22px;font-size:14px}
+nav .links a{color:var(--mut);text-decoration:none}
+.btn{display:inline-block;background:var(--acc);color:#1a1206;font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;font-size:15px}
+.btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.hero{padding:84px 0 40px;text-align:center;background:radial-gradient(760px 360px at 50% -60px,rgba(232,163,61,.15),transparent 70%)}
+.hero h1{font-size:clamp(32px,5.4vw,50px);line-height:1.16;font-weight:850;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p{color:var(--mut);font-size:clamp(16px,2.2vw,19px);max-width:620px;margin:20px auto 30px}
+section{padding:56px 0 8px}
+h2{font-size:clamp(24px,3.6vw,32px);margin-bottom:10px}
+.lead{color:var(--mut);max-width:640px;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
+.card .ic{width:42px;height:42px;border-radius:10px;background:rgba(232,163,61,.14);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{color:var(--mut);font-size:14.5px;flex:1}
+.card .row{display:flex;align-items:center;gap:14px;margin-top:18px}
+.card .from{color:var(--mut);font-size:13.5px}
+.card .from b{color:var(--acc2);font-size:19px}
+footer{border-top:1px solid var(--line);margin-top:70px;padding:28px 0 40px;color:var(--mut);font-size:13.5px}
+footer .wrap{display:flex;gap:20px;flex-wrap:wrap}
+</style></head>
 <body>
-<h1>Banli Studio</h1>
-<p>AI-assisted digital services studio: content writing, data cleanup, small automation — and ready-to-use self-hosted tools.</p>
-<ul>
-<li><a href="private-file-station/">Private File Station</a> — turn an old PC into your own private cloud. From 9 USDT, crypto direct, no platform.</li>
-</ul>
-<p>Contact: banli@muse.ai</p>
+<nav><div class="wrap">
+<a class="logo" href="./">Banli<span>Studio</span></a>
+<div class="links"><a href="#products">Products</a><a href="#services">Services</a><a href="mailto:banli@muse.ai">Contact</a></div>
+</div></nav>
+<header class="hero"><div class="wrap">
+<h1>Small studio. <em>Fast, honest</em> digital work.</h1>
+<p>We build ready-to-use self-hosted tools and deliver content, data and automation jobs — most within 24 hours. No platforms taking a cut, no subscriptions: you pay once, in crypto, and we deliver.</p>
+<a class="btn" href="#products">See the product</a>
+</div></header>
+<section id="products"><div class="wrap">
+<h2>Products</h2>
+<p class="lead">Tools we have tested ourselves, packaged so anyone can run them.</p>
+<div class="grid">
+<div class="card"><div class="ic">&#128193;</div><h3>Private File Station</h3><p>Turn an old PC into your own private cloud: no speed limits, no monthly fees, accounts and permissions included. Tested by us — runs in about 62 MB of RAM.</p>
+<div class="row"><span class="from">from <b>9 USDT</b></span><a class="btn" href="private-file-station/">View product</a></div></div>
+</div>
+</div></section>
+<section id="services"><div class="wrap">
+<h2>Services</h2>
+<p class="lead">Order through our LaborX profile (escrow-protected), or email us directly at banli@muse.ai.</p>
+<div class="grid">
+<div class="card"><div class="ic">&#9997;</div><h3>AI Content Pack</h3><p>Blog posts, threads and newsletters in English — SEO-structured, human-reviewed, delivered within 24 hours of your brief.</p>
+<div class="row"><span class="from">from <b>$30</b></span><a class="btn ghost" href="https://laborx.com/gigs/ai-content-pack-blog-post-thread-newsletter-delivered-in-24h-127781">On LaborX</a></div></div>
+<div class="card"><div class="ic">&#128202;</div><h3>Data Cleanup &amp; Automation</h3><p>CSV/Excel cleanup, dedupe and formatting — plus reusable Python scripts so you never clean the same file by hand twice.</p>
+<div class="row"><span class="from">from <b>$25</b></span><a class="btn ghost" href="https://laborx.com/gigs/data-cleanup-amp-spreadsheet-automation-csv-excel-python-127782">On LaborX</a></div></div>
+<div class="card"><div class="ic">&#128421;</div><h3>Custom small jobs</h3><p>Landing-page copy, web scraping to CSV, small scripts. If it is digital and deliverable in a day or two, ask us first.</p>
+<div class="row"><span class="from">from <b>$25</b></span><a class="btn ghost" href="mailto:banli@muse.ai">Email us</a></div></div>
+</div>
+</div></section>
+<footer><div class="wrap">
+<div>&copy; 2026 Banli Studio · banli@muse.ai</div>
+<div><a href="https://laborx.com/freelancers/users/id482005">LaborX profile</a></div>
+</div></footer>
 </body></html>

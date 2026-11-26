@@ -1,24 +1,189 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Private File Station — your old PC becomes your private cloud</title>
-<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 20px;line-height:1.6;color:#222}h1{line-height:1.25}.price{border:1px solid #ddd;border-radius:12px;padding:16px 20px;margin:12px 0}.addr{word-break:break-all;background:#f5f5f5;padding:10px;border-radius:8px;font-family:monospace}.cta{background:#222;color:#fff;padding:14px;border-radius:12px}</style></head>
+<title>Private File Station — your old PC becomes your private cloud | Banli Studio</title>
+<meta name="description" content="Turn an old PC into your own private file station. No speed limits, no subscription, no third-party cloud. From 9 USDT, crypto direct.">
+<style>
+:root{--ink:#0d1117;--ink2:#131a23;--card:#161e29;--line:#26303d;--txt:#e8edf2;--mut:#9fb0c0;--acc:#e8a33d;--acc2:#f5c168;--ok:#3fb96f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--ink);color:var(--txt);line-height:1.65}
+a{color:var(--acc2)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;background:rgba(13,17,23,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+nav .wrap{display:flex;align-items:center;gap:26px;height:60px}
+.logo{font-weight:800;font-size:18px;color:var(--txt);text-decoration:none}
+.logo span{color:var(--acc)}
+nav .links{margin-left:auto;display:flex;gap:22px;font-size:14px}
+nav .links a{color:var(--mut);text-decoration:none}
+nav .links a:hover{color:var(--txt)}
+.btn{display:inline-block;background:var(--acc);color:#1a1206;font-weight:700;padding:11px 22px;border-radius:10px;text-decoration:none;font-size:15px}
+.btn:hover{background:var(--acc2)}
+.btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.hero{padding:72px 0 30px;text-align:center;background:radial-gradient(720px 340px at 50% -60px,rgba(232,163,61,.16),transparent 70%)}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--ink2);color:var(--acc2);font-size:13px;padding:4px 14px;border-radius:99px;margin-bottom:20px}
+.hero h1{font-size:clamp(32px,5.4vw,52px);line-height:1.15;font-weight:850;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p.sub{color:var(--mut);font-size:clamp(16px,2.2vw,19px);max-width:640px;margin:20px auto 30px}
+.hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero .note{color:var(--mut);font-size:13px;margin-top:14px}
+.mock{max-width:860px;margin:52px auto 0;background:var(--ink2);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);text-align:left}
+.mock .bar{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid var(--line);background:#0a0e13}
+.dot{width:11px;height:11px;border-radius:50%}
+.mock .url{margin-left:10px;background:var(--card);border:1px solid var(--line);color:var(--mut);font-size:12.5px;padding:4px 14px;border-radius:7px;font-family:ui-monospace,monospace}
+.mock .body{display:grid;grid-template-columns:190px 1fr;min-height:270px}
+.side{border-right:1px solid var(--line);padding:18px 14px;font-size:13.5px}
+.side .who{display:flex;align-items:center;gap:9px;padding:8px 10px;background:var(--card);border-radius:9px;margin-bottom:14px}
+.avatar{width:26px;height:26px;border-radius:50%;background:var(--acc);color:#1a1206;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px;flex:none}
+.side a{display:block;color:var(--mut);text-decoration:none;padding:7px 10px;border-radius:8px}
+.side a.on{background:rgba(232,163,61,.14);color:var(--acc2)}
+.main{padding:18px 20px}
+.main .crumb{color:var(--mut);font-size:13px;margin-bottom:12px}
+.main .crumb b{color:var(--txt)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:9px 8px;border-bottom:1px solid var(--line);text-align:left}
+th{color:var(--mut);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.fname{color:var(--txt)}
+.fico{display:inline-block;width:22px}
+.pill{font-size:11.5px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}
+.pill.rw{color:var(--ok);border-color:rgba(63,185,111,.4)}
+.upbar{height:6px;background:var(--card);border-radius:99px;overflow:hidden;margin-top:6px}
+.upbar i{display:block;height:100%;width:68%;background:var(--acc)}
+@media(max-width:640px){.mock .body{grid-template-columns:1fr}.side{display:none}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:56px 0 8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+.stat b{display:block;font-size:26px;color:var(--acc2)}
+.stat span{color:var(--mut);font-size:13.5px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+section{padding:64px 0 8px}
+h2{font-size:clamp(24px,3.6vw,34px);letter-spacing:-.3px;margin-bottom:10px}
+.lead{color:var(--mut);max-width:640px;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.feat .ic{width:40px;height:40px;border-radius:10px;background:rgba(232,163,61,.14);display:flex;align-items:center;justify-content:center;margin-bottom:13px;font-size:19px}
+.feat h3{font-size:16.5px;margin-bottom:6px}
+.feat p{color:var(--mut);font-size:14.5px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.step .n{width:30px;height:30px;border-radius:50%;background:var(--acc);color:#1a1206;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.step p{color:var(--mut);font-size:14.5px}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+@media(max-width:860px){.prices{grid-template-columns:1fr}}
+.price{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
+.price.pop{border-color:var(--acc);position:relative;background:linear-gradient(180deg,rgba(232,163,61,.08),var(--card) 55%)}
+.price .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--acc);color:#1a1206;font-size:12.5px;font-weight:800;padding:3px 14px;border-radius:99px;white-space:nowrap}
+.price h3{font-size:17px}
+.price .amt{font-size:36px;font-weight:850;margin:10px 0 2px}
+.price .amt small{font-size:15px;color:var(--mut);font-weight:600}
+.price ul{list-style:none;margin:16px 0 22px;flex:1}
+.price li{color:var(--mut);font-size:14.5px;padding:5px 0 5px 24px;position:relative}
+.price li::before{content:"\2713";position:absolute;left:2px;color:var(--ok);font-weight:700}
+.price .btn{text-align:center}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:650}
+details p{color:var(--mut);font-size:14.5px;margin-top:8px}
+.order{background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:28px}
+.addr{word-break:break-all;background:#0a0e13;border:1px solid var(--line);padding:12px 14px;border-radius:9px;font-family:ui-monospace,monospace;font-size:14px;color:var(--acc2);margin:8px 0}
+footer{border-top:1px solid var(--line);margin-top:70px;padding:28px 0 40px;color:var(--mut);font-size:13.5px}
+footer .wrap{display:flex;gap:20px;flex-wrap:wrap}
+</style></head>
 <body>
-<h1>Turn an old PC into your own private file station</h1>
-<p>No speed limits. No subscription. No third-party cloud scanning your files. Your files live only on your own hard drive — accessible from any browser or phone on your network, with accounts and permissions.</p>
-<ul>
-<li>Single 1.2&nbsp;MB program, runs on almost any old PC/NAS (measured: ~62&nbsp;MB RAM)</li>
-<li>Drag-and-drop upload, resumable large files, media preview</li>
-<li>Admin account for you, read-only guest accounts for family/team</li>
-<li>Built on the open-source copyparty project (MIT license) — you pay for setup &amp; support, not the software</li>
-</ul>
-<div class="price"><b>Self-install pack — 9 USDT</b><br>Full package + config template + manual, email support 3 days.</div>
-<div class="price"><b>Remote setup — 49 USDT</b> (most popular)<br>We set it up on your machine remotely, create accounts, teach you to use it. 7 days support.</div>
-<div class="price"><b>Small team — 99 USDT</b><br>Up to 10 accounts with per-folder permissions, folder planning, 30 days support.</div>
-<h2>How to order (crypto, no platform)</h2>
-<ol>
-<li>Send USDT or USDC (Polygon or BSC network) to:<div class="addr">0x85F664B2FFAE495F9301C4619d846D93CC91f7d7</div></li>
-<li>Email your transaction hash and chosen plan to <b>banli@muse.ai</b></li>
-<li>We verify on-chain and deliver the pack / schedule your setup within 12 hours.</li>
-</ol>
-<p class="cta">Questions before paying? Email banli@muse.ai — a human-supervised AI studio replies within a day. If your device turns out to be incompatible, we refund in full.</p>
+<nav><div class="wrap">
+<a class="logo" href="../">Banli<span>Studio</span></a>
+<div class="links"><a href="#features">Features</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#order">Order</a></div>
+</div></nav>
+<header class="hero"><div class="wrap">
+<div class="badge">Self-hosted · One-time payment · No subscription</div>
+<h1>Turn an old PC into your own<br><em>private file station</em></h1>
+<p class="sub">No speed limits. No monthly fees. No third-party cloud scanning your files. Your files live on your own hard drive — reachable from any browser or phone, with accounts and permissions you control.</p>
+<div class="cta-row"><a class="btn" href="#pricing">Get it from 9 USDT</a><a class="btn ghost" href="#how">How it works</a></div>
+<p class="note">Pay with USDT / USDC (Polygon or BSC) · Delivered within 12 hours of on-chain confirmation</p>
+<div class="mock" aria-hidden="true">
+<div class="bar"><span class="dot" style="background:#e5534b"></span><span class="dot" style="background:#e8a33d"></span><span class="dot" style="background:#3fb96f"></span><span class="url">http://192.168.1.20:3923/files</span></div>
+<div class="body">
+<div class="side">
+<div class="who"><span class="avatar">A</span><div><b>admin</b><br><span style="color:var(--mut);font-size:12px">Full access</span></div></div>
+<a class="on" href="javascript:void(0)">&#128193; / files</a>
+<a href="javascript:void(0)">&#128247; Photos</a>
+<a href="javascript:void(0)">&#127916; Media</a>
+<a href="javascript:void(0)">&#128230; Backups</a>
+<a href="javascript:void(0)">&#128101; Guest: read-only</a>
+</div>
+<div class="main">
+<div class="crumb">files / <b>Family archive</b></div>
+<table>
+<tr><th>Name</th><th>Size</th><th>Access</th></tr>
+<tr><td class="fname"><span class="fico">&#128193;</span>2026-photos</td><td>4.2 GB</td><td><span class="pill rw">admin · rw</span> <span class="pill">guest · read</span></td></tr>
+<tr><td class="fname"><span class="fico">&#127916;</span>birthday-2026.mp4</td><td>812 MB</td><td><span class="pill rw">admin · rw</span> <span class="pill">guest · read</span></td></tr>
+<tr><td class="fname"><span class="fico">&#128196;</span>contracts.pdf</td><td>3.1 MB</td><td><span class="pill rw">admin · rw</span></td></tr>
+<tr><td class="fname"><span class="fico">&#11014;</span>uploading… drone-footage.zip</td><td>68%</td><td><div class="upbar"><i></i></div></td></tr>
+</table>
+</div></div></div>
+<div class="stats">
+<div class="stat"><b>1.2 MB</b><span>single program file</span></div>
+<div class="stat"><b>~62 MB</b><span>RAM in our own test</span></div>
+<div class="stat"><b>$0</b><span>monthly fees, forever</span></div>
+<div class="stat"><b>12 h</b><span>delivery after payment</span></div>
+</div>
+</div></header>
+<section id="features"><div class="wrap">
+<h2>Why people self-host their files</h2>
+<p class="lead">Cloud drives throttle your downloads, scan your uploads and charge you every month, forever. A file station on hardware you own has none of that.</p>
+<div class="grid">
+<div class="feat"><div class="ic">&#9889;</div><h3>No speed limits</h3><p>On your home network it runs at full LAN speed. Large videos and backups move in minutes, not hours.</p></div>
+<div class="feat"><div class="ic">&#128274;</div><h3>Actually private</h3><p>Files never leave your house unless you share them. No ads, no scanning, no account bans deleting your archive.</p></div>
+<div class="feat"><div class="ic">&#128101;</div><h3>Accounts &amp; permissions</h3><p>An admin account for you, read-only guest accounts for family or teammates — each folder can have its own rules.</p></div>
+<div class="feat"><div class="ic">&#128241;</div><h3>Any device, any browser</h3><p>Phone, tablet, laptop — if it has a browser, it can browse, stream and upload. Drag-and-drop, resumable uploads.</p></div>
+<div class="feat"><div class="ic">&#128421;</div><h3>Runs on almost anything</h3><p>An old laptop, a mini PC, a NAS, a cheap VPS. If it still turns on, it can probably be your file station.</p></div>
+<div class="feat"><div class="ic">&#129534;</div><h3>Open-source core</h3><p>Built on the copyparty project (MIT license). You pay us for setup, configuration and support — never for the software itself.</p></div>
+</div>
+</div></section>
+<section id="how"><div class="wrap">
+<h2>How it works</h2>
+<p class="lead">Three steps, and step two is mostly us.</p>
+<div class="steps">
+<div class="step"><div class="n">1</div><h3>Pick a plan &amp; pay</h3><p>Send USDT or USDC on Polygon or BSC to the address in the order section, then email us the transaction hash and your plan.</p></div>
+<div class="step"><div class="n">2</div><h3>We prepare your station</h3><p>We verify the payment on-chain and prepare everything: the pack, your configuration, your accounts. Guided plans get a live step-by-step session with us.</p></div>
+<div class="step"><div class="n">3</div><h3>Your files, your rules</h3><p>Open the station in your browser, sign in, start uploading. Share read-only guest access with whoever you choose.</p></div>
+</div>
+</div></section>
+<section id="pricing"><div class="wrap">
+<h2>Pricing — one-time, in USDT</h2>
+<p class="lead">No subscriptions, no platform fees. Every plan is delivered by Banli Studio and backed by a full refund if your device turns out to be incompatible.</p>
+<div class="prices">
+<div class="price"><h3>Self-install pack</h3><div class="amt">9 <small>USDT</small></div>
+<ul><li>Complete package: program + ready config template</li><li>Start scripts for Windows &amp; Linux/macOS</li><li>Illustrated step-by-step manual</li><li>Admin + guest accounts pre-configured</li><li>3 days of email support</li></ul>
+<a class="btn ghost" href="#order">Order self-install</a></div>
+<div class="price pop"><span class="tag">MOST POPULAR</span><h3>Guided setup</h3><div class="amt">49 <small>USDT</small></div>
+<ul><li>Everything in Self-install</li><li>We build your custom config for you — your accounts, folders and permissions</li><li>A live guided session (chat, ~1 hour): you run the steps on your machine, we direct every click — no remote-access software needed</li><li>We verify your station is up and reachable</li><li>7 days of priority support</li></ul>
+<a class="btn" href="#order">Order guided setup</a></div>
+<div class="price"><h3>Small team</h3><div class="amt">99 <small>USDT</small></div>
+<ul><li>Everything in Guided setup</li><li>Up to 10 accounts with a per-folder permission plan designed for your team</li><li>All configurations generated and documented by us</li><li>One follow-up adjustment session included</li><li>30 days of priority support</li></ul>
+<a class="btn ghost" href="#order">Order small team</a></div>
+</div>
+</div></section>
+<section id="order"><div class="wrap">
+<h2>How to order</h2>
+<div class="order">
+<p><b>1.</b> Send the plan amount in USDT or USDC (Polygon or BSC network) to:</p>
+<div class="addr">0x85F664B2FFAE495F9301C4619d846D93CC91f7d7</div>
+<p><b>2.</b> Email your transaction hash and chosen plan to <b>banli@muse.ai</b>.</p>
+<p style="margin-top:8px"><b>3.</b> We verify on-chain and deliver within 12 hours — the pack by email, guided sessions scheduled with you.</p>
+</div>
+</div></section>
+<section id="faq"><div class="wrap">
+<h2>FAQ</h2>
+<details><summary>What computer do I need?</summary><p>Almost any PC, laptop, NAS or VPS that can run Python — including old machines. In our own test the station used about 62 MB of RAM. If it turns out your device is incompatible, we refund in full.</p></details>
+<details><summary>How does the guided setup work if you can't access my computer?</summary><p>Exactly by design: we never touch your machine. We prepare every file and configuration in advance, then sit with you in a live chat session while you run the few steps yourself, checking each result as you go. Most setups finish within an hour.</p></details>
+<details><summary>Can I reach my files from outside my home?</summary><p>Yes — the manual covers safe options such as a mesh VPN, or port forwarding with the risks explained. Tell us your situation during setup and we will configure the sensible route.</p></details>
+<details><summary>Why crypto only?</summary><p>We are a small studio selling worldwide without a payment platform taking a cut or holding funds. USDT/USDC on Polygon or BSC keeps fees near zero. Every order is verified on-chain before delivery.</p></details>
+<details><summary>Is the software really free?</summary><p>Yes. The station is built on copyparty, an open-source project under the MIT license, and we include the license in your pack. You are paying for our configuration, guidance and support.</p></details>
+</div></section>
+<footer><div class="wrap">
+<div>&copy; 2026 Banli Studio · banli@muse.ai</div>
+<div>Built on copyparty (MIT license). Prices in USDT/USDC, one-time.</div>
+<div><a href="../">&larr; Banli Studio home</a></div>
+</div></footer>
 </body></html>
