@@ -132,7 +132,10 @@
   <section id="contact" class="cta">
     <h2>Have a story that needs telling?</h2>
     <p>Tell me about your project — timeline, audience, and the one thing you want readers to feel. I reply within one business day.</p>
+    <p style="font-family:Helvetica,Arial,sans-serif;font-size:15px;letter-spacing:.04em;margin:6px 0 16px">Email: banli@muse.ai</p>
     <a class="btn" href="mailto:banli@muse.ai">Start a project</a>
+    <button class="btn" id="copyMail" type="button" style="background:transparent;color:var(--ink);border:1.5px solid var(--ink);cursor:pointer;margin-left:10px">Copy email</button>
+    <script>document.getElementById('copyMail').addEventListener('click',function(){var b=this;function done(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy email';},2000);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText('banli@muse.ai').then(done).catch(done);}else{done();}});</script>
   </section>
 
   <footer>
