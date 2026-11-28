@@ -40,6 +40,17 @@ summary{cursor:pointer;font-weight:650} details p{color:var(--mut);font-size:14.
 .addr{word-break:break-all;background:#0a0e13;border:1px solid var(--line);padding:12px 14px;border-radius:9px;font-family:ui-monospace,monospace;font-size:14px;color:var(--acc2);margin:8px 0}
 footer{border-top:1px solid var(--line);margin-top:70px;padding:28px 0 40px;color:var(--mut);font-size:13.5px}
 
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}.card h3{font-size:16.5px;margin-bottom:6px}.card p{color:var(--mut);font-size:14.5px}
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}@media(max-width:1100px){.tiers{grid-template-columns:1fr 1fr}}@media(max-width:560px){.tiers{grid-template-columns:1fr}}
+.tier{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;position:relative}
+.tier.hot{border-color:var(--acc);background:linear-gradient(180deg,rgba(232,163,61,.08),var(--card) 55%)}
+.tier .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--acc);color:#1a1206;font-size:12.5px;font-weight:800;padding:3px 14px;border-radius:99px;white-space:nowrap}
+.tier h3{font-size:17px}
+.tier .price{background:none;border:none;border-radius:0;padding:0;font-size:34px;font-weight:850;margin:10px 0 2px}
+.tier ul{list-style:none;margin:16px 0 22px;flex:1}.tier li{color:var(--mut);font-size:14.5px;padding:5px 0 5px 24px;position:relative}
+.tier li::before{content:"\2713";position:absolute;left:2px;color:var(--ok);font-weight:700}
+.tier li.strike{color:var(--mut);font-size:13.5px}.tier li.strike::before{content:""}
+.tcta{display:block;text-align:center;background:var(--acc);color:#1a1206;font-weight:700;padding:12px 10px;border-radius:10px;text-decoration:none}
 .ways-note{background:var(--accent-soft);border:1px solid var(--accent);border-radius:12px;padding:14px 18px;font-size:14.5px;color:var(--ink);margin-top:26px}
 .tier .strike{color:var(--muted);font-size:13.5px}
 </style>
